@@ -2,7 +2,7 @@
 import { IMAGE_CDN } from "../utils/Constants";
 
 const RestaurantCard = ({restaurant}) => {
-    console.log(restaurant);
+    //console.log(restaurant);
     const {cloudinaryImageId, name, costForTwoString, cuisines, avgRating} = restaurant.data;
   return (
     <div className="h-80 w-72 m-2 p-2 bg-white flex flex-col relative">
