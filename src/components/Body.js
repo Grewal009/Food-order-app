@@ -17,7 +17,9 @@ const Body = () => {
 
   async function getRestaurants(){
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7333148&lng=76.7794179&page_type=DESKTOP_WEB_LISTING");
+    //console.log("data ",data);
     const json = await data.json();
+    //console.log("json ",json);
     //console.log(json.data.cards[2].data.data.cards);
     setRestaurants(json.data.cards[2].data.data.cards);
     setFilteredRestaurant(json.data.cards[2].data.data.cards);
@@ -45,7 +47,7 @@ const Body = () => {
             
         </div>
 
-      <div className="bg-yellow-200 min-h-screen px-5 flex flex-wrap justify-center">
+      <div className="pb-5 bg-yellow-200 min-h-screen px-5 flex flex-wrap justify-center">
       
     
         { (restaurants.length === 0)? <Shimmer />
