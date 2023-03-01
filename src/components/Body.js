@@ -9,6 +9,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
   const [restaurants, setRestaurants] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   useEffect(()=>{
     getRestaurants();
@@ -19,6 +20,7 @@ const Body = () => {
     const json = await data.json();
     //console.log(json.data.cards[2].data.data.cards);
     setRestaurants(json.data.cards[2].data.data.cards);
+    setFilteredRestaurant(json.data.cards[2].data.data.cards);
 
   }
 
@@ -26,6 +28,8 @@ const Body = () => {
    return restaurants.filter((rest)=> rest.data.name.toLowerCase().includes(searchText.toLowerCase()));
     }
   
+    
+
   return(
     <div>
         <div className="bg-yellow-200 p-5 flex justify-center items-center ">
@@ -36,16 +40,18 @@ const Body = () => {
           onClick={()=>{
             const data = filterData(searchText, restaurants);
             console.log(data);
-            setRestaurants(data);
+            setFilteredRestaurant(data);
             }}>Search</button>
             
         </div>
 
       <div className="bg-yellow-200 min-h-screen px-5 flex flex-wrap justify-center">
       
+    
         { (restaurants.length === 0)? <Shimmer />
+      : (filteredRestaurant.length === 0)?<h1>No match found.</h1>
       :
-         restaurants.map(
+         filteredRestaurant.map(
           (rest)=><RestaurantCard restaurant={rest} key={rest.data.id}/>
         )}
       
