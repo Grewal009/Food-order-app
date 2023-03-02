@@ -14,7 +14,7 @@ const AppLayout = () => {
   return (
       <div>
         <Header />
-        <Body />
+        <Outlet />
         <Footer />
       </div>
     )
@@ -24,16 +24,20 @@ const appRouter = createBrowserRouter([
     {
         path : "/",
         element : <AppLayout />,
-        errorElement : <Error />        
-    },
-    {
-        path : "/about",
-        element : <About />,
-    },
-    {
-        path : "/contact",
-        element : <Contact />,
-    }
+        errorElement : <Error />,   
+        children : [{
+            path : "/",
+            element : <Body />,    
+        },
+        {
+            path : "/about",
+            element : <About />,    
+        },
+        {
+            path : "/contact",
+            element : <Contact />,    
+        },
+    ]}
 ]);
 
 
