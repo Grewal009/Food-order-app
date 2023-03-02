@@ -11,7 +11,7 @@ const RestaurantCard = ({restaurant}) => {
             <h1 className="font-bold m-1 text-lg leading-none flex items-center">{name}</h1>
             <h2 className="h-10 w-10  bg-yellow-300 m-1 px-2 rounded-full text-xs font-medium flex items-center justify-center">{avgRating} stars</h2>
         </div>
-        <h3 className="m-1 text-sm">{cuisines?.join(", ")}</h3>
+        <h3 className="mx-1 text-sm leading-tight">{cuisines?.join(", ")}</h3>
         
             <h3 className="m-1 w-[266] bg-green-400 text-center rounded-2xl text-lg font-bold absolute bottom-1">{costForTwoString}</h3>
         
