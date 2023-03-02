@@ -1,8 +1,12 @@
+import { useState } from "react";
 
 
 
 
 const Header = () => {
+
+  const [isloggedIn, setIsloggedIn] = useState(false);
+
   return (
     <div className="bg-slate-200 shadow-lg px-5 py-2 flex justify-between">
       <h1 className="font-extrabold flex justify-center items-center">FoodApp</h1>
@@ -15,8 +19,14 @@ const Header = () => {
       </ul>
       
       <div>
-      <button className="mx-2 px-4 py-2 bg-orange-400 rounded-md  text-slate-50 font-bold hover:bg-orange-600">Login</button>
-      <button className="mx-2 px-4 py-2 bg-orange-400 rounded-md  text-slate-50 font-bold hover:bg-orange-600">Signup</button>
+        {
+          isloggedIn?
+          <button onClick={()=> setIsloggedIn(false)} className="w-24 mx-2 px-4 py-2 bg-orange-400 rounded-md  text-slate-50 font-bold hover:bg-orange-600">Logout</button>
+          :
+          <button onClick={()=> setIsloggedIn(true)} className="w-24 mx-2 px-4 py-2 bg-orange-400 rounded-md  text-slate-50 font-bold hover:bg-orange-600">Login</button>
+        }
+      
+      
       </div>
 
     </div>
