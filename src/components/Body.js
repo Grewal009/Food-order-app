@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { RESTRO_DATA } from "../utils/Constants";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //const restro_List = RESTRO_DATA;
@@ -54,7 +55,11 @@ const Body = () => {
       : (filteredRestaurant.length === 0)?<h1>No match found.</h1>
       :
          filteredRestaurant.map(
-          (rest)=><RestaurantCard restaurant={rest} key={rest.data.id}/>
+          (rest)=>
+          <Link to={"/restaurant/" + rest.data.id} key={rest.data.id}>
+            <RestaurantCard restaurant={rest} />
+          </Link>
+          
         )}
       
       </div>
