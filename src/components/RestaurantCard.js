@@ -5,7 +5,7 @@ const RestaurantCard = ({restaurant}) => {
     //console.log(restaurant);
     const {cloudinaryImageId, name, costForTwoString, cuisines, avgRating} = restaurant.data;
   return (
-    <div className="h-80 w-72 m-2 p-2 bg-white flex flex-col relative hover:border-4 hover:border-gray-600">
+    <div className="h-80 w-72 p-2 bg-white flex flex-col relative hover:border-4 hover:border-gray-600">
         <img alt="image" src={IMAGE_CDN + cloudinaryImageId}/>
         <div className="flex justify-between ">
             <h1 className="font-bold m-1 text-lg leading-none flex items-center">{name}</h1>

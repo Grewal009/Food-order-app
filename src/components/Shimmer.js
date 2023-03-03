@@ -3,7 +3,7 @@ const Shimmer = () => {
     return (
         <>
         {Array(8).fill("").map((e, index)=>
-         <div key={index} className="h-80 w-72 m-2 p-2 bg-white flex flex-col relative">
+         <div key={index} className="h-80 w-72 m-3 p-2 bg-white flex flex-col relative">
          <div className="bg-slate-300 w-full h-44"></div>
          <div className="flex justify-between">
              <h1 className="font-bold m-1 text-lg leading-none flex items-center"></h1>
