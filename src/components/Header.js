@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 
@@ -7,16 +7,18 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
   const [isloggedIn, setIsloggedIn] = useState(false);
+  const activeLink = "text-slate-200 bg-slate-900 border-4 border-slate-800 mx-2 px-4 py-1 rounded-full font-extrabold text-xl ";
+  const normalLink = "mx-2 px-4 py-1 rounded-full font-extrabold text-xl text-slate-500 border-4 border-slate-500";
 
   return (
     <div className="bg-slate-200 shadow-lg px-5 py-2 flex justify-between">
       <h1 className="font-extrabold flex justify-center items-center">FoodApp</h1>
 
       <ul className="flex font-bold justify-center items-center ">
-        <li className="mx-2 px-4 py-1 rounded-full text-white bg-indigo-500 hover:bg-indigo-700 active:bg-indigo-800 active:ring-1 "><Link to="/" >Home</Link></li>
-        <li className="mx-2 px-4 py-1 rounded-full text-white bg-indigo-500 hover:bg-indigo-800 "><Link to="/about" >About</Link></li>
-        <li className="mx-2 px-4 py-1 rounded-full text-white bg-indigo-500 hover:bg-indigo-800 "><Link to="/contact">Contact</Link></li>
-        <li className="mx-2 px-4 py-1 rounded-full text-white bg-indigo-500 hover:bg-indigo-800 ">Cart</li>
+      <NavLink to="/" className={({isActive})=>isActive?activeLink:normalLink} ><li className="">Home</li></NavLink>
+        <li className=""><NavLink to="/about" className={({isActive})=>isActive?activeLink:normalLink} >About</NavLink></li>
+        <li className=""><NavLink to="/contact" className={({isActive})=>isActive?activeLink:normalLink} >Contact</NavLink></li>
+        <li className=""><NavLink to="/cart" className={({isActive})=>isActive?activeLink:normalLink} >Cart</NavLink></li>  
       </ul>
       
       <div>
