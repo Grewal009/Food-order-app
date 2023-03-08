@@ -4,6 +4,7 @@ import { RESTRO_DATA } from "../utils/Constants";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/filterData";
 
 const Body = () => {
   //const restro_List = RESTRO_DATA;
@@ -27,9 +28,7 @@ const Body = () => {
 
   }
 
-  function filterData(searchText, restaurants){
-   return restaurants.filter((rest)=> rest.data.name.toLowerCase().includes(searchText.toLowerCase()));
-    }
+ 
   
     
 
