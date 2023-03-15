@@ -12,13 +12,17 @@ import Cart from './components/Cart';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Cart from './components/Cart';
+import { Provider } from 'react-redux';
+import store from './utils/store';
 
 const AppLayout = () => {
   return (
       <div>
-        <Header />
-        <Outlet />
-        <Footer />
+        <Provider store={store}>
+            <Header />
+            <Outlet />
+            <Footer />
+        </Provider>
       </div>
     )
 }
