@@ -7,7 +7,7 @@ const FoodItem = ({cloudinaryImageId, name, price}) => {
     
   return (
     
-          <div className="h-80 w-72 p-2 bg-white flex flex-col relative hover:border-4 hover:border-gray-600">
+          <div className="h-80 w-72 m-2 p-2 bg-white flex flex-col relative hover:border-4 hover:border-gray-600">
         
             <div>
             <img alt="image" src={IMAGE_CDN + cloudinaryImageId}/>
